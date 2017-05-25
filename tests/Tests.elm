@@ -17,4 +17,13 @@ all =
                     in
                     Expect.equal 0 (score rolls)
             ]
+        , describe "with all open frames"
+            [ test "it returns the sum" <|
+                \() ->
+                    let
+                        rolls =
+                            [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+                    in
+                    Expect.equal 20 (score rolls)
+            ]
         ]
