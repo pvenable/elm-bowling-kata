@@ -13,7 +13,7 @@ all =
                 \() ->
                     let
                         rolls =
-                            [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                            List.repeat 20 0
                     in
                     Expect.equal 0 (score rolls)
             ]
@@ -22,7 +22,7 @@ all =
                 \() ->
                     let
                         rolls =
-                            [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+                            List.repeat 20 1
                     in
                     Expect.equal 20 (score rolls)
             ]
