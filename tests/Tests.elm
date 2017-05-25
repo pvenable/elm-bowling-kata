@@ -18,12 +18,21 @@ all =
                     Expect.equal 0 (score rolls)
             ]
         , describe "with all open frames"
-            [ test "it returns the sum" <|
+            [ test "it returns the sum of all rolls" <|
                 \() ->
                     let
                         rolls =
                             List.repeat 20 1
                     in
                     Expect.equal 20 (score rolls)
+            ]
+        , describe "with a spare"
+            [ test "it returns the sum of all rolls plus spare bonus" <|
+                \() ->
+                    let
+                        rolls =
+                            List.append [ 9, 1 ] (List.repeat 18 1)
+                    in
+                    Expect.equal 29 (score rolls)
             ]
         ]
