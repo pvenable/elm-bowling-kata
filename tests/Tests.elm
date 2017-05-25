@@ -44,4 +44,13 @@ all =
                     in
                     Expect.equal 30 (score rolls)
             ]
+        , describe "with a perfect game"
+            [ test "it returns 300" <|
+                \() ->
+                    let
+                        rolls =
+                            List.repeat 12 10
+                    in
+                    Expect.equal 300 (score rolls)
+            ]
         ]
