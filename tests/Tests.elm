@@ -35,4 +35,13 @@ all =
                     in
                     Expect.equal 29 (score rolls)
             ]
+        , describe "with a strike"
+            [ test "it returns the sum of all rolls plus strike bonus" <|
+                \() ->
+                    let
+                        rolls =
+                            10 :: List.repeat 18 1
+                    in
+                    Expect.equal 30 (score rolls)
+            ]
         ]
