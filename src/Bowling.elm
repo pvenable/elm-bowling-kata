@@ -1,11 +1,25 @@
-module Bowling exposing (score)
+module Bowling exposing (Game, newGame, roll, score)
 
 import List exposing (drop, head, sum, tail, take)
 import Maybe exposing (withDefault)
 
 
-score : List Int -> Int
-score rolls =
+type Game
+    = Game (List Int)
+
+
+newGame : Game
+newGame =
+    Game []
+
+
+roll : Int -> Game -> Game
+roll pins (Game rolls) =
+    Game (List.append rolls [ pins ])
+
+
+score : Game -> Int
+score (Game rolls) =
     scoreFrames 10 rolls
 
 
